@@ -10,6 +10,12 @@ import UIKit
 
 class ShoppingItemCell: UITableViewCell {
 
+    // MARK: IBOutlets
+
+    @IBOutlet weak var shoppingItemImage: UIImageView!
+    @IBOutlet weak var productName: UILabel!
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

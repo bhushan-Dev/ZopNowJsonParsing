@@ -46,10 +46,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Hv-gH-2Gp">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="201"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="200"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="200" id="Wg4-N8-1Hv"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyp-FL-nMv">
-                                                    <rect key="frame" x="16" y="221" width="343" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyp-FL-nMv">
+                                                    <rect key="frame" x="16" y="220" width="343" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -65,6 +68,10 @@
                                                 <constraint firstAttribute="bottom" secondItem="nyp-FL-nMv" secondAttribute="bottom" constant="10" id="keA-K5-wGL"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="productName" destination="nyp-FL-nMv" id="TLT-Ig-UgZ"/>
+                                            <outlet property="shoppingItemImage" destination="6Hv-gH-2Gp" id="IOe-Tv-4oa"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
