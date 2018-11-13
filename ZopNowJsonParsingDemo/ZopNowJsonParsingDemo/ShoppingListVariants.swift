@@ -9,6 +9,7 @@
 import Foundation
 
 class ShoppingListVariants {
+
     var variantId: String
     var nameQuantity: String
     var variantFullName: String

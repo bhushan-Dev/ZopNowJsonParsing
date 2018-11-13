@@ -9,27 +9,55 @@
 import UIKit
 
 class ShoppingItemDetailsViewController: UIViewController {
-
+    
+    // MARK: Constants
+    
+    var shoppingItemDetailsModel: ShoppingListModel?
+    
+    // MARK: IBOutlets
+    
+    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var fullProductName: UILabel!
+    @IBOutlet weak var rate: UILabel!
+    @IBOutlet weak var discount: UILabel!
+    
+    // MARK: Life cycle method
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let shoppingItemDetailsModel = shoppingItemDetailsModel else {
+            return
+        }
 
-        // Do any additional setup after loading the view.
+        self.title = shoppingItemDetailsModel.productName
+
+        fullProductName.text = shoppingItemDetailsModel.variants.first?.variantFullName
+        let mrp = String(format: "%d", (shoppingItemDetailsModel.variants.first?.mrp)!)
+        rate.text = mrp + (shoppingItemDetailsModel.variants.first?.currency)!
+        let discountedAmount = String(format: "%lf", (shoppingItemDetailsModel.variants.first?.discount)!)
+        discount.text = discountedAmount
+
+        // Download and display product image
+        downloadImage()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: Helper
+
+    func downloadImage() {
+        guard let shoppingItemDetailsModel = shoppingItemDetailsModel else {
+            return
+        }
+
+        let urlString = "https:" + shoppingItemDetailsModel.imageUrl
+
+        guard let url = URL(string: urlString),
+            let data = try? Data(contentsOf: url) else {
+            return
+        }
+
+        DispatchQueue.main.async {
+            self.productImage.image = UIImage(data: data)
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

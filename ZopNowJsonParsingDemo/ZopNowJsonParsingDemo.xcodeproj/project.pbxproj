@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86018BE6219B629600BC5201 /* ShoppingItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86018BE5219B629600BC5201 /* ShoppingItemDetailsViewController.swift */; };
 		86547D3C218A3988004ACF94 /* ShoppingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86547D3B218A3988004ACF94 /* ShoppingListModel.swift */; };
 		86547D3E218A3B2A004ACF94 /* ShoppingListVariants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86547D3D218A3B2A004ACF94 /* ShoppingListVariants.swift */; };
 		86F2C81D218792AB00917BE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F2C81C218792AB00917BE7 /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		86018BE5219B629600BC5201 /* ShoppingItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemDetailsViewController.swift; sourceTree = "<group>"; };
 		86547D3B218A3988004ACF94 /* ShoppingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListModel.swift; sourceTree = "<group>"; };
 		86547D3D218A3B2A004ACF94 /* ShoppingListVariants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListVariants.swift; sourceTree = "<group>"; };
 		86F2C819218792AB00917BE7 /* ZopNowJsonParsingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZopNowJsonParsingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 				86F2C8302187950C00917BE7 /* ShoppingItemCell.swift */,
 				86547D3B218A3988004ACF94 /* ShoppingListModel.swift */,
 				86547D3D218A3B2A004ACF94 /* ShoppingListVariants.swift */,
+				86018BE5219B629600BC5201 /* ShoppingItemDetailsViewController.swift */,
 			);
 			path = ZopNowJsonParsingDemo;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				86F2C81F218792AB00917BE7 /* ShoppingListViewController.swift in Sources */,
 				86F2C81D218792AB00917BE7 /* AppDelegate.swift in Sources */,
 				86547D3E218A3B2A004ACF94 /* ShoppingListVariants.swift in Sources */,
+				86018BE6219B629600BC5201 /* ShoppingItemDetailsViewController.swift in Sources */,
 				86547D3C218A3988004ACF94 /* ShoppingListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -147,6 +147,15 @@ class ShoppingListViewController: UIViewController {
 
 extension ShoppingListViewController: UITableViewDelegate {
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let shoppingListDataModel = shoppingListDataModel {
+            let shoppingItemDetailsViewController: ShoppingItemDetailsViewController = self.storyboard?.instantiateViewController(withIdentifier: "ShoppingItemDetailsViewController") as! ShoppingItemDetailsViewController
+            shoppingItemDetailsViewController.shoppingItemDetailsModel = shoppingListDataModel[indexPath.row]
+            
+            navigationController?.pushViewController(shoppingItemDetailsViewController, animated: true)
+        }
+    }
+
 }
 
 // MARK: Datasource
