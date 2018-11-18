@@ -140,6 +140,17 @@ class ShoppingListViewController: UIViewController {
         task.resume()
     }
 
+    // Fetch Image
+    func fetchImage(url: String, completion: @escaping (UIImage) -> Void) {
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: URL(string: url)!)
+            DispatchQueue.main.async {
+                let image = data != nil ? UIImage(data: data!) : UIImage(named: "test")
+                completion(image!)
+            }
+        }
+    }
+
 }
 
 
@@ -147,13 +158,17 @@ class ShoppingListViewController: UIViewController {
 
 extension ShoppingListViewController: UITableViewDelegate {
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath) {
+
         if let shoppingListDataModel = shoppingListDataModel {
             let shoppingItemDetailsViewController: ShoppingItemDetailsViewController = self.storyboard?.instantiateViewController(withIdentifier: "ShoppingItemDetailsViewController") as! ShoppingItemDetailsViewController
             shoppingItemDetailsViewController.shoppingItemDetailsModel = shoppingListDataModel[indexPath.row]
             
             navigationController?.pushViewController(shoppingItemDetailsViewController, animated: true)
         }
+
     }
 
 }
@@ -161,7 +176,10 @@ extension ShoppingListViewController: UITableViewDelegate {
 // MARK: Datasource
 
 extension ShoppingListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int) -> Int {
+
         guard let shoppingList = shoppingListDataModel else {
             return 0
         }
@@ -169,18 +187,25 @@ extension ShoppingListViewController: UITableViewDataSource {
         return shoppingList.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ShoppingItemCell = tableView.dequeueReusableCell(withIdentifier: "ShoppingItemCell") as! ShoppingItemCell
 
         if let shoppingListDataModel = shoppingListDataModel {
             let item = shoppingListDataModel[indexPath.row]
             cell.productName.text = item.productName
-            cell.shoppingItemImage.image = UIImage(named: "test")
+
+            let itemUrl = item.imageUrl
+            let fullUrl = "https:" + itemUrl
+
+            fetchImage(url: fullUrl) { (image) in
+                cell.shoppingItemImage.image = image
+            }
         }
 
         return cell
     }
-
 
 }
 

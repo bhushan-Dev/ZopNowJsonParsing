@@ -126,17 +126,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="discount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYO-Lt-uZj">
+                                <rect key="frame" x="147" y="381" width="66" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3dd-56-wvE" firstAttribute="top" secondItem="V95-gr-pS0" secondAttribute="top" id="2rG-Ny-cJK"/>
                             <constraint firstItem="PY3-Fp-6Yu" firstAttribute="leading" secondItem="V95-gr-pS0" secondAttribute="leading" constant="16" id="CXo-HU-Xy7"/>
                             <constraint firstItem="N9F-1B-ew7" firstAttribute="top" secondItem="vle-7q-Ruu" secondAttribute="bottom" constant="20" id="FWY-bl-ifa"/>
+                            <constraint firstItem="IYO-Lt-uZj" firstAttribute="leading" secondItem="N9F-1B-ew7" secondAttribute="trailing" constant="8" id="Fk2-jR-9x8"/>
                             <constraint firstItem="V95-gr-pS0" firstAttribute="trailing" secondItem="3dd-56-wvE" secondAttribute="trailing" id="IoB-mg-5qk"/>
                             <constraint firstItem="3dd-56-wvE" firstAttribute="leading" secondItem="V95-gr-pS0" secondAttribute="leading" id="RTD-PC-uxc"/>
                             <constraint firstItem="vle-7q-Ruu" firstAttribute="leading" secondItem="V95-gr-pS0" secondAttribute="leading" constant="16" id="StA-CU-P4v"/>
                             <constraint firstItem="V95-gr-pS0" firstAttribute="trailing" secondItem="vle-7q-Ruu" secondAttribute="trailing" constant="16" id="eAd-zg-vAV"/>
                             <constraint firstItem="vle-7q-Ruu" firstAttribute="top" secondItem="3dd-56-wvE" secondAttribute="bottom" constant="20" id="qdE-Na-Loc"/>
+                            <constraint firstItem="IYO-Lt-uZj" firstAttribute="top" secondItem="vle-7q-Ruu" secondAttribute="bottom" constant="20" id="rYC-62-hfu"/>
                             <constraint firstItem="N9F-1B-ew7" firstAttribute="leading" secondItem="PY3-Fp-6Yu" secondAttribute="trailing" constant="20" id="rhZ-j9-ApY"/>
                             <constraint firstItem="PY3-Fp-6Yu" firstAttribute="top" secondItem="vle-7q-Ruu" secondAttribute="bottom" constant="20" id="xbU-4z-iv6"/>
                         </constraints>
@@ -151,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9vP-BI-PaE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="33"/>
+            <point key="canvasLocation" x="856.79999999999995" y="32.833583208395808"/>
         </scene>
     </scenes>
     <resources>
