@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="58q-q7-4Vf">
-                                <rect key="frame" x="0.0" y="32" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingItemCell" rowHeight="252" id="mvM-ho-RSP" customClass="ShoppingItemCell" customModule="ZopNowJsonParsingDemo" customModuleProvider="target">
@@ -78,10 +78,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="58q-q7-4Vf" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ir1-4i-EkN"/>
-                            <constraint firstItem="58q-q7-4Vf" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="izn-2d-xQ4"/>
-                            <constraint firstItem="58q-q7-4Vf" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="jdo-zm-DS4"/>
-                            <constraint firstItem="58q-q7-4Vf" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="wlh-2O-ogp"/>
+                            <constraint firstItem="58q-q7-4Vf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CeF-RR-gTy"/>
+                            <constraint firstAttribute="bottom" secondItem="58q-q7-4Vf" secondAttribute="bottom" id="Rni-u5-aGC"/>
+                            <constraint firstItem="58q-q7-4Vf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W0M-yZ-lhl"/>
+                            <constraint firstItem="58q-q7-4Vf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zjP-WU-A5v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

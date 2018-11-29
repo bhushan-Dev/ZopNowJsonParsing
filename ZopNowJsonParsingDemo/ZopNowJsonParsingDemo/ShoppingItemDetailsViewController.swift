@@ -33,9 +33,16 @@ class ShoppingItemDetailsViewController: UIViewController {
         self.title = shoppingItemDetailsModel.productName
 
         fullProductName.text = shoppingItemDetailsModel.variants.first?.variantFullName
-        let mrp = String(format: "%d", (shoppingItemDetailsModel.variants.first?.mrp)!)
-        rate.text = mrp + (shoppingItemDetailsModel.variants.first?.currency)!
-        let discountedAmount = String(format: "%lf", (shoppingItemDetailsModel.variants.first?.discount)!)
+
+        guard let modelMrp = shoppingItemDetailsModel.variants.first?.mrp,
+            let modelCurrency = shoppingItemDetailsModel.variants.first?.currency,
+            let modelDiscount = shoppingItemDetailsModel.variants.first?.discount else {
+                return
+        }
+
+        let mrp = String(format: "%d", modelMrp)
+        rate.text = mrp + modelCurrency
+        let discountedAmount = String(format: "%lf", modelDiscount)
         discount.text = discountedAmount
 
         // Download and display product image
@@ -53,7 +60,7 @@ class ShoppingItemDetailsViewController: UIViewController {
 
         guard let url = URL(string: urlString),
             let data = try? Data(contentsOf: url) else {
-            return
+                return
         }
 
         DispatchQueue.main.async {

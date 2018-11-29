@@ -35,7 +35,6 @@ class ShoppingListViewController: UIViewController {
         let session = URLSession.shared
 
         guard let url = URL(string: baseURL) else {
-            // Alert invalid url
             return
         }
 
@@ -43,9 +42,11 @@ class ShoppingListViewController: UIViewController {
 
         let task = session.dataTask(with: request) { (data, response, error) in
 
-            if let error = error {
+            if let networkError = error {
                 // Alert network error
-                print(error.localizedDescription)
+                self.showAlert(with: networkError.localizedDescription)
+                print(networkError.localizedDescription)
+
                 return
             }
 
@@ -129,15 +130,24 @@ class ShoppingListViewController: UIViewController {
                         }
                     }
 
-
                 } catch let jsonError {
                     //Alert json parsing
+                    self.showAlert(with: jsonError.localizedDescription)
                     print(jsonError.localizedDescription)
                 }
             }
         }
 
         task.resume()
+    }
+
+    // Error alert
+    func showAlert(with message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+        alert.addAction(okButton)
+
+        present(alert, animated: true)
     }
 
     // Fetch Image
